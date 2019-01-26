@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloXamarin.TabbedPage1"
+             Title="ACM App">
+    
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Notes">
+        <StackLayout Margin="10,35,10,10">
+            <Label Text="Notes"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+            <Editor x:Name="_editor"
+                HeightRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+                    Text="Load"
+                    Clicked="OnLoadButtonClicked" />
+                <Button Grid.Column="2"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Image">
+        <StackLayout Margin="20">
+            <Label Text="Look at my image" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Image Source="image.jpg" />
+            <Label Text="Writing apps with C# in Xamarin is awesome!" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Slider">
+        <StackLayout>
+            <Label x:Name="rotatingLabel"
+               Text="ROTATING TEXT WEEE"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+            <Slider Maximum="360"
+                ValueChanged="OnSliderValueChanged" />
+
+            <Label x:Name="displayLabel"
+               Text="0.0"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>
